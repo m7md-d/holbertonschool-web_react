@@ -1,6 +1,6 @@
 // ========== Task 1: Teacher Interface ==========
 
-interface Teacher {
+export interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
   fullTimeEmployee: boolean;
@@ -21,7 +21,7 @@ console.log(teacher3);
 
 // ========== Task 2: Extending the Teacher class ==========
 
-interface Directors extends Teacher {
+export interface Directors extends Teacher {
   numberOfReports: number;
 }
 
@@ -36,11 +36,11 @@ console.log(director1);
 
 // ========== Task 3: Printing teachers ==========
 
-interface printTeacherFunction {
+export interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-const printTeacher: printTeacherFunction = (firstName, lastName) => {
+export const printTeacher: printTeacherFunction = (firstName, lastName) => {
   return `${firstName.charAt(0)}. ${lastName}`;
 };
 
@@ -48,16 +48,16 @@ console.log(printTeacher("John", "Doe"));
 
 // ========== Task 4: Writing a class ==========
 
-interface StudentConstructor {
+export interface StudentConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
 }
 
-interface StudentClassInterface {
+export interface StudentClassInterface {
   workOnHomework(): string;
   displayName(): string;
 }
 
-class StudentClass implements StudentClassInterface {
+export class StudentClass implements StudentClassInterface {
   private firstName: string;
   private lastName: string;
 
